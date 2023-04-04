@@ -6,6 +6,7 @@
 #     <name>Matthias</name>
 #     <count>97</count>
 #   </comment>
+# http://py4e-data.dr-chuck.net/comments_42.xml
 
 import urllib.request, urllib.parse, urllib.error
 import xml.etree.ElementTree as ET
@@ -25,5 +26,9 @@ while True:
         continue
     print('Retrieving', url)
     print('Retrieved', len(xml), 'characters')
-    # tree = ET.fromstring(xml)
+    
+    tree = ET.fromstring(xml)
+    lst = tree.findall('comments/comment/count')
+    # print(lst)
+    print('Comment count:', len(lst))
     
