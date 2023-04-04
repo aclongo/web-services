@@ -2,11 +2,6 @@
 # read the XML data from that URL using urllib 
 # and then parse and extract the comment counts from the XML data, 
 # compute the sum of the numbers in the file and enter the sum
-#   <comment>
-#     <name>Matthias</name>
-#     <count>97</count>
-#   </comment>
-# http://py4e-data.dr-chuck.net/comments_42.xml
 
 import urllib.request, urllib.parse, urllib.error
 import xml.etree.ElementTree as ET
@@ -18,25 +13,26 @@ ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
 while True:
-    try:
+    try: # prompt the user for a url location and read it with urllib
         url = input('Enter location: ')
         xml = urllib.request.urlopen(url, context=ctx).read()
         break
-    except:
+    except: # prevent invalid urls from crashing the program
         print('Invalid url. Try again.')
         continue
 
-print('Retrieving', url)
-print('Retrieved', len(xml), 'characters')
+print('Retrieving', url) # let the user know retrieval was successful
+print('Retrieved', len(xml), 'characters') # get the total number of characters in the file
 
-tree = ET.fromstring(xml)
-lst = tree.findall('comments/comment')
-print(lst)
-print('Comment count:', len(lst))
+# Parse the comments in the XML data
+tree = ET.fromstring(xml) # get the xml element tree
+lst = tree.findall('comments/comment') # place all comment tags in a list
+print('Comment count:', len(lst)) # get the total number of comment tags
 
-sum = 0
-for item in lst:
-    count = item.find('count').text
-    sum += int(count)
+# Extract the counts and add them together
+sum = 0 # initalize a sum variable
+for item in lst: # go through each comment item in the list
+    count = item.find('count').text # retrieve the count text
+    sum += int(count) # compute the sum of the extracted counts
 
 print('The sum of all comments is:', sum)
