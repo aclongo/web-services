@@ -1,5 +1,5 @@
 # xml-extraction
-This is my solution to Extracting Data from XML assignment for Chapter 13 of Python for Everybody on Coursera.
+This is my solution to Extracting Data from XML assignment for Chapter 13 of Python for Everybody.
 
 The assignment was as follows:
 "Write a program that will prompt for a URL, read the XML data from that URL using urllib and then parse and extract the comment counts from the XML data, compute the sum of the numbers in the file and enter the sum."
