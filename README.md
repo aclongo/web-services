@@ -14,3 +14,7 @@ The data in the provided xml files consisted of a number of names and comment co
 Once I had the element tree of the xml, I parsed the comments and placed them in a list. From here I used a for loop to extract all of the counts within the comment items of the list and added them as integers to the sum.
 
 I had to provide the correct sum of all comment counts in order to pass the assignment.
+
+## Example Output:
+
+<img src="xml-output.png" width="50%">
