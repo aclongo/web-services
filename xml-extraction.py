@@ -18,9 +18,12 @@ ctx.verify_mode = ssl.CERT_NONE
 
 while True:
     try:
-        url = input('Enter a xml url to parse comments: ')
-        html = urllib.request.urlopen(url, context=ctx).read()
+        url = input('Enter location: ')
+        xml = urllib.request.urlopen(url, context=ctx).read()
     except:
         print('Invalid url. Try again.')
         continue
     print('Retrieving', url)
+    print('Retrieved', len(xml), 'characters')
+    # tree = ET.fromstring(xml)
+    
