@@ -1,5 +1,5 @@
 # web-services
-These are my solutions to Extracting Data from XML and JSON assignments for Chapter 13 of Python for Everybody.
+These are my solutions to the Extracting Data from XML and JSON assignments for Chapter 13 of Python for Everybody.
 
 ## xml-extraction
 The assignment was as follows:
