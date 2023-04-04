@@ -21,14 +21,22 @@ while True:
     try:
         url = input('Enter location: ')
         xml = urllib.request.urlopen(url, context=ctx).read()
+        break
     except:
         print('Invalid url. Try again.')
         continue
-    print('Retrieving', url)
-    print('Retrieved', len(xml), 'characters')
-    
-    tree = ET.fromstring(xml)
-    lst = tree.findall('comments/comment/count')
-    # print(lst)
-    print('Comment count:', len(lst))
-    
+
+print('Retrieving', url)
+print('Retrieved', len(xml), 'characters')
+
+tree = ET.fromstring(xml)
+lst = tree.findall('comments/comment')
+print(lst)
+print('Comment count:', len(lst))
+
+sum = 0
+for item in lst:
+    count = item.find('count').text
+    sum += int(count)
+
+print('The sum of all comments is:', sum)
