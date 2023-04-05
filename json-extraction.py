@@ -1,9 +1,22 @@
 # The program will prompt for a URL,
 # read the JSON data from that URL using urllib 
 # and then parse and extract the comment counts from the JSON data, 
-# compute the sum of the numbers in the file and enter the sum below:
+# compute the sum of the numbers in the file
+# {
+#   comments: [
+#     {
+#       name: "Matthias"
+#       count: 97
+#     },
+#     {
+#       name: "Geomer"
+#       count: 97
+#     }
+#     ...
+#   ]
+# }
 
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
 import json
 import ssl
 
@@ -15,8 +28,13 @@ ctx.verify_mode = ssl.CERT_NONE
 while True:
     try: # prompt the user for a url location and read it with urllib
         url = input('Enter location: ')
-        js = urllib.request.urlopen(url, context=ctx).read()
+        data = urllib.request.urlopen(url, context=ctx).read()
         break
     except: # prevent invalid urls from crashing the program
         print('Invalid url. Try again.')
         continue
+
+print('Retrieving', url) # let the user know retrieval was successful
+print('Retrieved', len(data), 'characters') # get the total number of characters in the file
+
+info = json.loads(data)
