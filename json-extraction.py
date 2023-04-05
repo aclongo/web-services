@@ -37,4 +37,16 @@ while True:
 print('Retrieving', url) # let the user know retrieval was successful
 print('Retrieved', len(data), 'characters') # get the total number of characters in the file
 
-info = json.loads(data)
+js = json.loads(data)
+
+info = js['comments'][0]
+comments = len(info)
+print('Comments:', comments)
+
+sum = 0
+for item in info:
+    count = info['count']
+    print(count)
+    sum += int(count)
+
+print('Sum:', sum)
