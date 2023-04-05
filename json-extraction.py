@@ -2,19 +2,6 @@
 # read the JSON data from that URL using urllib 
 # and then parse and extract the comment counts from the JSON data, 
 # compute the sum of the numbers in the file
-# {
-#   comments: [
-#     {
-#       name: "Matthias"
-#       count: 97
-#     },
-#     {
-#       name: "Geomer"
-#       count: 97
-#     }
-#     ...
-#   ]
-# }
 
 import urllib.request
 import json
@@ -39,14 +26,15 @@ print('Retrieved', len(data), 'characters') # get the total number of characters
 
 js = json.loads(data)
 
-info = js['comments'][0]
+# Access the comment section and count them
+info = js['comments']
 comments = len(info)
-print('Comments:', comments)
+print('Count:', comments)
 
 sum = 0
+# Iterate through each comment and extract the count
 for item in info:
-    count = info['count']
-    print(count)
-    sum += int(count)
+    count = item['count']
+    sum += int(count) # add to the total sum
 
 print('Sum:', sum)
