@@ -17,3 +17,6 @@ I had to provide the correct sum of all comment counts in order to pass the assi
 
 ## json-extraction
 This one works essentially the same as the xml-extraction, retrieving the same data, but is simplified due to the nature of JSON.
+
+## json-geo-api
+Assignment: The program will prompt for a location, contact a web service and retrieve JSON for the web service and parse that data, and retrieve the first place_id from the JSON. A place ID is a textual identifier that uniquely identifies a place as within Google Maps.
