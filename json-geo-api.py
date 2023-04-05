@@ -46,6 +46,8 @@ while True:
         print(data)
         continue
 
-    print(json.dumps(js, indent=4))
+    # print(json.dumps(js, indent=4))
+
+    print(js['results'][0]['place_id'])
 
     
