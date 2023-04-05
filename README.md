@@ -11,6 +11,9 @@ Once I had the element tree of the xml, I parsed the individual comments and pla
 
 I had to provide the correct sum of all comment counts in order to pass the assignment.
 
-## Example Output:
+### Example Output:
 
 <img src="xml-output.png" width="80%">
+
+## json-extraction
+This one works essentially the same as the xml-extraction, retrieving the same data, but is simplified due to the nature of JSON.

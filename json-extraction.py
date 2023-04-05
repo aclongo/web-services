@@ -28,8 +28,7 @@ js = json.loads(data)
 
 # Access the comment section and count them
 info = js['comments']
-comments = len(info)
-print('Count:', comments)
+print('Comment count:', len(info))
 
 sum = 0
 # Iterate through each comment and extract the count
@@ -37,4 +36,4 @@ for item in info:
     count = item['count']
     sum += int(count) # add to the total sum
 
-print('Sum:', sum)
+print('The sum of all comments is:', sum)
