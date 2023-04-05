@@ -20,3 +20,5 @@ This one works essentially the same as the xml-extraction, retrieving the same d
 
 ## json-geo-api
 Assignment: The program will prompt for a location, contact a web service and retrieve JSON for the web service and parse that data, and retrieve the first place_id from the JSON. A place ID is a textual identifier that uniquely identifies a place as within Google Maps.
+
+For this one I was provided with an API key and service url, all I had to do was print the json with json.dumps and parse through to find the correct pathway towards the 'place_id' data. I solved this with js['results'][0]['place_id'] and was able to extract the 'place_id'.
